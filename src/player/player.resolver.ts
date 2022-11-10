@@ -14,6 +14,21 @@ export class PlayerResolver {
         return this.playerService.getPlayers();
     }
 
+    @Query()
+    getAllPlayersByTeam( @Args("teamId") teamId : string) {
+        return this.playerService.getPlayersByTeam(teamId);
+    }
+
+    @Query()
+    getAllPlayerByPositions(@Args("positions") positions:PlayerPosition[]){
+        return this.playerService.getAllPlayerByPositions(positions);
+    }
+
+    @Query()
+    getAllPlayerByFoot( @Args("foot") foot:PlayerFoot) {
+        return this.playerService.getAllPlayerByFoot(foot);
+    }
+
     @ResolveField()
     team(@Parent() player: Player) {
         const { teamId } = player;
