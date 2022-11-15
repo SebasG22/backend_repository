@@ -58,14 +58,6 @@ export class PlayerService {
         return this.players.filter(player => player.teamId === teamId );
     }
     
-    getAllPlayersByPositions(positions:PlayerPosition[]) {
-        return this.players.filter(player => positions.some(position => player.position.includes(position)));
-    }
-
-    getAllPlayersByFoot(foot:PlayerFoot) {
-        return this.players.filter(player => player.foot === foot);
-    }
-
     getAllPlayersByTeamWithParameters(teamId:string, foot?:PlayerFoot, positions?:PlayerPosition[]){
         let playersFiltered = this.players.filter(player => player.teamId === teamId)
         if( foot){
