@@ -38,9 +38,8 @@ type Player {
 type Query {
     getAllTeams: [Team]
     getAllPlayers: [Player]
-    getAllPlayersByTeam(teamId:ID):[Player] 
-    getAllPlayerByPositions(positions:[PlayerPosition]):[Player] 
-    getAllPlayerByFoot (foot:PlayerFoot):[Player] 
+    getAllPlayersByTeam(teamId:ID ):[Player] 
+    getAllPlayersByTeamWithParameters(teamId:ID, foot:PlayerFoot, positions:[PlayerPosition]):[Player] 
 }
 
 type Mutation {

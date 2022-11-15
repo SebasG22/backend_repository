@@ -15,18 +15,13 @@ export class PlayerResolver {
     }
 
     @Query()
-    getAllPlayersByTeam( @Args("teamId") teamId : string) {
+    getAllPlayersByTeam(@Args("teamId") teamId: string) {
         return this.playerService.getPlayersByTeam(teamId);
     }
 
     @Query()
-    getAllPlayerByPositions(@Args("positions") positions:PlayerPosition[]){
-        return this.playerService.getAllPlayerByPositions(positions);
-    }
-
-    @Query()
-    getAllPlayerByFoot( @Args("foot") foot:PlayerFoot) {
-        return this.playerService.getAllPlayerByFoot(foot);
+    getAllPlayersByTeamWithParameters(@Args("teamId") teamId: string, @Args("foot") foot?: PlayerFoot, @Args("positions") positions?: PlayerPosition[]) {
+        return this.playerService.getAllPlayersByTeamWithParameters(teamId, foot, positions);
     }
 
     @ResolveField()

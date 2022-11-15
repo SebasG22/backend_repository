@@ -58,12 +58,23 @@ export class PlayerService {
         return this.players.filter(player => player.teamId === teamId );
     }
     
-    getAllPlayerByPositions(positions:PlayerPosition[]) {
+    getAllPlayersByPositions(positions:PlayerPosition[]) {
         return this.players.filter(player => positions.some(position => player.position.includes(position)));
     }
 
-    getAllPlayerByFoot(foot:PlayerFoot) {
+    getAllPlayersByFoot(foot:PlayerFoot) {
         return this.players.filter(player => player.foot === foot);
+    }
+
+    getAllPlayersByTeamWithParameters(teamId:string, foot?:PlayerFoot, positions?:PlayerPosition[]){
+        let playersFiltered = this.players.filter(player => player.teamId === teamId)
+        if( foot){
+            playersFiltered = playersFiltered.filter(player => player.foot === foot);
+        }
+        if( positions && positions.length > 0){
+            playersFiltered = playersFiltered.filter(player => positions.some(position => player.position.includes(position)));
+        }
+        return playersFiltered
     }
 
     createPlayer(name: string, teamId: string, position: PlayerPosition[], birth: string, height: number, weight: number, foot: PlayerFoot) {
