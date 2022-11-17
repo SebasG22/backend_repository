@@ -107,7 +107,7 @@ export class TeamService {
       background: 'blue',
       name: 'Denmark',
       flag_icon:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Flag_of_Denmark.svg/800px-Flag_of_Denmark.svg.png',
+        'https://upload.wikimedia.org/wikipedia/commons/4/47/Dinamarca_%28Serarped%29.png',
     },
     {
       id: '16',
@@ -134,44 +134,44 @@ export class TeamService {
       id: '19',
       background: 'blue',
       name: 'Japan',
-      flag_icon: 'https://flagicon.org/ar.svg',
+      flag_icon: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Flag_of_Japan_%28WFB_2013%29.gif',
     },
     {
       id: '20',
       background: 'blue',
       name: 'Costa Rica',
-      flag_icon: 'https://flagicon.org/ar.svg',
+      flag_icon: 'https://upload.wikimedia.org/wikipedia/commons/f/f2/Flag_of_Costa_Rica.svg',
     },
     {
       id: '21',
       background: 'blue',
       name: 'Belgium',
-      flag_icon: 'https://flagicon.org/ar.svg',
+      flag_icon: 'https://upload.wikimedia.org/wikipedia/commons/9/92/Flag_of_Belgium_%28civil%29.svg',
     },
     {
       id: '22',
       background: 'blue',
       name: 'Croatia',
-      flag_icon: 'https://flagicon.org/ar.svg',
+      flag_icon: 'https://upload.wikimedia.org/wikipedia/commons/f/fc/War_flag_of_Croatia_%281941%E2%80%931945%29.svg',
     },
     {
       id: '23',
       background: 'blue',
       name: 'Canada',
-      flag_icon: 'https://flagicon.org/ar.svg',
+      flag_icon: 'https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Canada_%28Pantone%29.svg',
     },
     {
       id: '24',
       background: 'blue',
       name: 'Morocco',
-      flag_icon: 'https://flagicon.org/ar.svg',
+      flag_icon: 'https://upload.wikimedia.org/wikipedia/commons/2/2c/Flag_of_Morocco.svg',
     },
     {
       id: '25',
       background: 'blue',
       name: 'Brazil',
       flag_icon:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Brazilian_Flag_-_round.svg/512px-Brazilian_Flag_-_round.svg.png',
+        'https://upload.wikimedia.org/wikipedia/commons/6/66/Flag_of_the_Federative_Republic_of_Brazil_%28WFB_2000%29.jpg',
     },
     {
       id: '26',
@@ -183,7 +183,7 @@ export class TeamService {
       id: '27',
       background: 'blue',
       name: 'Switzerland',
-      flag_icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Switzerland.svg/640px-Flag_of_Switzerland.svg.png',
+      flag_icon: 'https://upload.wikimedia.org/wikipedia/commons/f/f2/Civil_Ensign_of_Switzerland.svg',
     },
     {
       id: '28',
