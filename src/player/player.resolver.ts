@@ -1,26 +1,29 @@
-import { Args, Mutation, Parent, Query, ResolveField, Resolver } from "@nestjs/graphql";
-import { Team } from "src/team/team.model";
+import { Args, Float, ID, Int, Mutation, Parent, Query, ResolveField, Resolver } from "@nestjs/graphql";
 import { TeamService } from "src/team/team.service";
 import { Player, PlayerFoot, PlayerPosition } from "./player.model";
 import { PlayerService } from "./player.service";
 
-@Resolver("Player")
+@Resolver(() => Player)
 export class PlayerResolver {
     constructor(private playerService: PlayerService, private teamService: TeamService) {
     }
 
-    @Query()
+    @Query(() => [Player])
     getAllPlayers() {
         return this.playerService.getPlayers();
     }
 
-    @Query()
-    getAllPlayersByTeam(@Args("teamId") teamId: string) {
+    @Query(() => [Player])
+    getAllPlayersByTeam(@Args("teamId", {type: () => ID}) teamId: string) {
         return this.playerService.getPlayersByTeam(teamId);
     }
 
-    @Query()
-    getAllPlayersByTeamWithParameters(@Args("teamId") teamId: string, @Args("foot") foot?: PlayerFoot, @Args("positions") positions?: PlayerPosition[]) {
+    @Query(() => [Player])
+    getAllPlayersByTeamWithParameters(
+        @Args("teamId", {type: () => ID}) teamId: string,
+        @Args("foot", {type: () => PlayerFoot}) foot?: PlayerFoot,
+        @Args("positions", {type: () => PlayerPosition}) positions?: PlayerPosition[]
+    ) {
         return this.playerService.getAllPlayersByTeamWithParameters(teamId, foot, positions);
     }
 
@@ -30,15 +33,15 @@ export class PlayerResolver {
         return this.teamService.getTeamById(teamId);
     }
 
-    @Mutation()
+    @Mutation(() => Player)
     createPlayer(
         @Args("name") name: string,
-        @Args("teamId") teamId: string,
-        @Args("position") position: PlayerPosition[],
+        @Args("teamId", {type: () => ID}) teamId: string,
+        @Args("position", {type: () => PlayerPosition}) position: PlayerPosition[],
         @Args("birth") birth: string,
-        @Args("height") height: number,
-        @Args("weight") weight: number,
-        @Args("foot") foot: PlayerFoot
+        @Args("height", {type: () => Float}) height: number,
+        @Args("weight", {type: () => Float}) weight: number,
+        @Args("foot", {type: () => PlayerFoot}) foot: PlayerFoot
     ): Player {
         return this.playerService.createPlayer(name, teamId, position, birth, height, weight, foot);
     }
