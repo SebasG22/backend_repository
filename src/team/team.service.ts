@@ -69,7 +69,7 @@ export class TeamService {
     },
     {
       id: '10',
-      background: 'blue',
+      background: '#B0C7E4',
       name: 'Argentina',
       flag_icon:
         'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/800px-Flag_of_Argentina.svg.png',
